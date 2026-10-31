@@ -1,0 +1,56 @@
+{
+  "_sobre": "Mapa arquivo -> grupo de estilo. Lido pelo script de conversão para escolher o tratamento. Ver ANALISE-ESTILOS.md.",
+  "grupos": {
+    "bruno_gslides": {
+      "descricao": "Prof. Bruno Santos - Google Slides 16:9 (exportado direto ou via iLovePDF)",
+      "assinatura": {"page_size": [720, 405], "rodape_regex": "UFBA/IC/DCC\\s+MATA53 ⦿ Teoria dos Grafos\\s+Bruno Santos\\s*\\d*"},
+      "tratamento": ["remover_rodape", "juntar_slides_continuados", "ignorar_imagens_template", "extrair_figuras_raster", "conferir_caracteres_perdidos"]
+    },
+    "hamilton_beamer": {
+      "descricao": "Prof. Hamilton Brumatto - LaTeX Beamer 4:3 (PAA)",
+      "assinatura": {"creator": "LaTeX with beamer", "page_size": [362.8, 272.1], "rodape_regex": "(Prof\\. )?Hamilton José Brumatto\\s+PAA"},
+      "tratamento": ["normalizar_acentos_nfc", "remover_barra_navegacao", "remover_rodape", "colapsar_overlays", "renderizar_pagina_se_tiver_grafo"]
+    },
+    "cid_latex": {
+      "descricao": "Prof. Cid C. de Souza (Unicamp) - LaTeX em folha carta",
+      "assinatura": {"producer": "GNU Ghostscript 6.51", "page_size": [612, 792], "cabecalho_regex": "^N P-completude\\s+\\d+", "rodape_regex": "^Cid C\\. de Souza$"},
+      "tratamento": ["normalizar_acentos_nfc", "remover_cabecalho", "remover_rodape", "corrigir_glifos", "renderizar_pagina_se_tiver_diagrama"]
+    },
+    "notas_manuscritas": {
+      "descricao": "Anotações manuscritas do iPad (sem texto extraível)",
+      "assinatura": {"producer": "iOS .* Quartz PDFContext", "chars_por_pagina_max": 5},
+      "tratamento": ["renderizar_paginas", "transcrever_com_visao"]
+    }
+  },
+  "arquivos": {
+    "teoria/00 - Modelagem.pdf": "bruno_gslides",
+    "teoria/01 - Grafos & Modelos de Grafos.pdf": "bruno_gslides",
+    "teoria/02 - Terminologia e Tipos Especiais de Grafos.pdf": "bruno_gslides",
+    "teoria/03 - Representando Grafos & Isomorfismo.pdf": "bruno_gslides",
+    "teoria/04 - Conectividade.pdf": "bruno_gslides",
+    "teoria/05 - Euler & Hamilton.pdf": "bruno_gslides",
+    "teoria/06 - Árvores.pdf": "bruno_gslides",
+    "teoria/07 - Travessia em Árvores.pdf": "bruno_gslides",
+    "teoria/08 - Spanning Trees.pdf": "bruno_gslides",
+    "teoria/09 - Minimum Spanning Trees.pdf": "bruno_gslides",
+    "algoritmos/13 - Single-Source Shortest Paths.pdf": "bruno_gslides",
+    "algoritmos/14 - All-pairs Shortest Paths.pdf": "bruno_gslides",
+    "algoritmos/15 - Max Flow Ford-Fulkerson Method.pdf": "bruno_gslides",
+
+    "teoria/10 - Prim - prof. Hamilton.pdf": "hamilton_beamer",
+    "algoritmos/11a - BFS-DFS-Kosaraju-Tarjan.pdf": "hamilton_beamer",
+    "algoritmos/12 - Ordenação Topológica-Dijkstra-Bellman-Ford - Prof. Hamilton.pdf": "hamilton_beamer",
+    "algoritmos/16A - Algoritmos.pdf": "hamilton_beamer",
+    "algoritmos/16B - Análise.pdf": "hamilton_beamer",
+    "algoritmos/16C - Crescimento de funções.pdf": "hamilton_beamer",
+    "algoritmos/16D - Recorrências.pdf": "hamilton_beamer",
+    "algoritmos/17a - Reduções.pdf": "hamilton_beamer",
+    "algoritmos/17c - NP-Completude(2).pdf": "hamilton_beamer",
+
+    "algoritmos/17b - NP-Completude.pdf": "cid_latex",
+
+    "algoritmos/15 - bps-MATA53-g15-notes.pdf": "notas_manuscritas",
+    "algoritmos/16 - bps-MATA53-g16-notes.pdf": "notas_manuscritas",
+    "algoritmos/17 - bps-MATA53-g17-notes.pdf": "notas_manuscritas"
+  }
+}
