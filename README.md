@@ -73,10 +73,3 @@ grupos.json     qual PDF pertence a qual grupo
 BACKLOG.md      a lista de tarefas, da primeira até a última
 CODE_STYLE.md   as regras de escrita do código
 ```
-
-## Onde estamos
-
-- ✅ O caminho completo funciona: os 26 PDFs viram 26 arquivos `.md`.
-- ✅ O título de cada slide é encontrado nos 4 grupos.
-- ⏳ O texto ainda sai "sujo": rodapés, acentos quebrados e slides repetidos continuam lá. A limpeza de cada grupo são as próximas tarefas do `BACKLOG.md`.
-- 🎯 **Objetivo final:** abrir o Claude Code nesta pasta, perguntar algo como *"qual a diferença entre Kosaraju e Tarjan?"* e ele responder usando as aulas, sem precisar abrir os PDFs.
